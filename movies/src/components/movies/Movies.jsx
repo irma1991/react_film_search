@@ -4,33 +4,34 @@ function Movie(props) {
     if(props.error !== 'False') {
         return (
             <div className="container">
-
-                <table className="table table-sm table-dark">
+                <table className="table table-sm">
                     <thead>
                     <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Title</th>
-                        <th scope="col">Description</th>
+                        <th scope="col">Pavadinimas</th>
+                        <th scope="col">Aprašymas</th>
                         <th scope="col">IMDB</th>
-                        <th scope="col">Runtime</th>
-                        <th scope="col">Director</th>
+                        <th scope="col">Trukmė</th>
+                        <th scope="col">Režisierius</th>
+                        <th scope="col">Plakatas</th>
                     </tr>
                     </thead>
                     <tbody>
                     <tr>
-                        <th scope="row">1</th>
                         <td>{props.title}</td>
                         <td>{props.plot}</td>
                         <td>{props.imdb}</td>
                         <td>{props.time}</td>
                         <td>{props.director}</td>
+                        <td><img src = {props.poster}/></td>
                     </tr>
                     </tbody>
                 </table>
             </div>
         );
     } else return(
-        <p>dfhdf</p>
+        <div className="alert alert-danger" role="alert">
+            Nerasta jokių rezultatų pagal Jūsų paieškos žodžius...
+        </div>
     )
 }
 

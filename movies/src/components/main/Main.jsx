@@ -11,8 +11,15 @@ class Main extends Component{
 
         return(
             <main>
-                <div className="row">
-                    <Form/>
+                <div className="row card-row">
+                    <div className="card container card-container">
+                        <div className="card-header">
+                            Filmų paieškos puslapis
+                        </div>
+                        <div className="card-body">
+                        </div>
+                        <Form/>
+                    </div>
                 </div>
 
             </main>

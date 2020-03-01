@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import Movies from "../movies/Movies";
+import './form.scss';
 
 class Form extends Component {
     constructor(props) {
@@ -34,18 +35,23 @@ class Form extends Component {
         return (
             <div>
             <form onSubmit={this.handleSubmit}>
-                <label>
-                    Ieskomo filmo pavadinimas:
-                    <input type="text" value={this.state.paieskosZodis} onChange={this.handleChange} />
-                </label>
-                <input type="submit" value="Submit" />
+                <div className="form-group container">
+                    <label>Įveskite filmo pavadinimą:</label>
+                    <input class="form-control" type="text" value={this.state.paieskosZodis} onChange={this.handleChange} />
+                </div>
+                <div class = "container">
+                    <button type="submit" value="Submit" className="btn btn-secondary">Ieškoti</button>
+                </div>
             </form>
-                <Movies title = {this.state.rastasFilmas.Title}
-                        plot = {this.state.rastasFilmas.Plot}
-                        imdb = {this.state.rastasFilmas.imdbRating}
-                        time = {this.state.rastasFilmas.Runtime}
-                        director = {this.state.rastasFilmas.Director}
-                        error = {this.state.rastasFilmas.Response}/>
+                <div class = "container movies-table">
+                    <Movies title = {this.state.rastasFilmas.Title}
+                            plot = {this.state.rastasFilmas.Plot}
+                            imdb = {this.state.rastasFilmas.imdbRating}
+                            time = {this.state.rastasFilmas.Runtime}
+                            director = {this.state.rastasFilmas.Director}
+                            poster = {this.state.rastasFilmas.Poster}
+                            error = {this.state.rastasFilmas.Response}/>
+                </div>
             </div>
         );
     }
